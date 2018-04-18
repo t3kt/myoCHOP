@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		32A1B92F2086E45000F9FD09 /* MyoCHOP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9212086DFC600F9FD09 /* MyoCHOP.cpp */; };
+		32A1B9302086E45E00F9FD09 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A1B9132086DEC100F9FD09 /* myo.framework */; };
+		32A1B9332086E55900F9FD09 /* MyoData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9322086E55900F9FD09 /* MyoData.cpp */; };
+		32A1B9362086E72300F9FD09 /* MyoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9342086E72300F9FD09 /* MyoManager.cpp */; };
+		32A1B93A2086ECBD00F9FD09 /* MyoSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9382086ECBD00F9FD09 /* MyoSettings.cpp */; };
+		32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93B208726CB00F9FD09 /* Common.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		32A1B9132086DEC100F9FD09 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = myo.framework; path = libs/myo.framework; sourceTree = "<group>"; };
+		32A1B9172086DF8900F9FD09 /* CHOP_CPlusPlusBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHOP_CPlusPlusBase.h; sourceTree = "<group>"; };
+		32A1B9182086DF8900F9FD09 /* CPlusPlusCHOPExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlusPlusCHOPExample.h; sourceTree = "<group>"; };
+		32A1B9192086DF8900F9FD09 /* CPlusPlus_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPlusPlus_Common.h; sourceTree = "<group>"; };
+		32A1B91A2086DF8900F9FD09 /* CPlusPlusCHOPExample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPlusPlusCHOPExample.cpp; sourceTree = "<group>"; };
+		32A1B9212086DFC600F9FD09 /* MyoCHOP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoCHOP.cpp; sourceTree = "<group>"; };
+		32A1B9222086DFC600F9FD09 /* MyoCHOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoCHOP.h; sourceTree = "<group>"; };
+		32A1B9292086E44800F9FD09 /* MyoCHOP.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoCHOP.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A1B92B2086E44800F9FD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32A1B9312086E4FC00F9FD09 /* MyoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoData.h; sourceTree = "<group>"; };
+		32A1B9322086E55900F9FD09 /* MyoData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoData.cpp; sourceTree = "<group>"; };
+		32A1B9342086E72300F9FD09 /* MyoManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoManager.cpp; sourceTree = "<group>"; };
+		32A1B9352086E72300F9FD09 /* MyoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoManager.h; sourceTree = "<group>"; };
+		32A1B9372086E7C800F9FD09 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		32A1B9382086ECBD00F9FD09 /* MyoSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoSettings.cpp; sourceTree = "<group>"; };
+		32A1B9392086ECBD00F9FD09 /* MyoSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoSettings.h; sourceTree = "<group>"; };
+		32A1B93B208726CB00F9FD09 /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		32A1B9262086E44800F9FD09 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32A1B9302086E45E00F9FD09 /* myo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32A1B9012086DB8800F9FD09 = {
+			isa = PBXGroup;
+			children = (
+				32A1B9202086DFA300F9FD09 /* src */,
+				32A1B9152086DF8900F9FD09 /* td */,
+				32A1B92A2086E44800F9FD09 /* MyoCHOP */,
+				32A1B90B2086DB8800F9FD09 /* Products */,
+				32A1B9122086DEC000F9FD09 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		32A1B90B2086DB8800F9FD09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				32A1B9292086E44800F9FD09 /* MyoCHOP.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32A1B9122086DEC000F9FD09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32A1B9132086DEC100F9FD09 /* myo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		32A1B9152086DF8900F9FD09 /* td */ = {
+			isa = PBXGroup;
+			children = (
+				32A1B9172086DF8900F9FD09 /* CHOP_CPlusPlusBase.h */,
+				32A1B9182086DF8900F9FD09 /* CPlusPlusCHOPExample.h */,
+				32A1B91A2086DF8900F9FD09 /* CPlusPlusCHOPExample.cpp */,
+				32A1B9192086DF8900F9FD09 /* CPlusPlus_Common.h */,
+			);
+			path = td;
+			sourceTree = "<group>";
+		};
+		32A1B9202086DFA300F9FD09 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				32A1B9372086E7C800F9FD09 /* Common.h */,
+				32A1B9212086DFC600F9FD09 /* MyoCHOP.cpp */,
+				32A1B9222086DFC600F9FD09 /* MyoCHOP.h */,
+				32A1B9312086E4FC00F9FD09 /* MyoData.h */,
+				32A1B9322086E55900F9FD09 /* MyoData.cpp */,
+				32A1B9342086E72300F9FD09 /* MyoManager.cpp */,
+				32A1B9352086E72300F9FD09 /* MyoManager.h */,
+				32A1B9382086ECBD00F9FD09 /* MyoSettings.cpp */,
+				32A1B9392086ECBD00F9FD09 /* MyoSettings.h */,
+				32A1B93B208726CB00F9FD09 /* Common.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		32A1B92A2086E44800F9FD09 /* MyoCHOP */ = {
+			isa = PBXGroup;
+			children = (
+				32A1B92B2086E44800F9FD09 /* Info.plist */,
+			);
+			path = MyoCHOP;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		32A1B9282086E44800F9FD09 /* MyoCHOP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32A1B92C2086E44800F9FD09 /* Build configuration list for PBXNativeTarget "MyoCHOP" */;
+			buildPhases = (
+				32A1B9252086E44800F9FD09 /* Sources */,
+				32A1B9262086E44800F9FD09 /* Frameworks */,
+				32A1B9272086E44800F9FD09 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyoCHOP;
+			productName = MyoCHOP;
+			productReference = 32A1B9292086E44800F9FD09 /* MyoCHOP.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		32A1B9022086DB8800F9FD09 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = optexture;
+				TargetAttributes = {
+					32A1B9282086E44800F9FD09 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 32A1B9052086DB8800F9FD09 /* Build configuration list for PBXProject "MyoCHOP" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 32A1B9012086DB8800F9FD09;
+			productRefGroup = 32A1B90B2086DB8800F9FD09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				32A1B9282086E44800F9FD09 /* MyoCHOP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		32A1B9272086E44800F9FD09 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		32A1B9252086E44800F9FD09 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32A1B92F2086E45000F9FD09 /* MyoCHOP.cpp in Sources */,
+				32A1B9362086E72300F9FD09 /* MyoManager.cpp in Sources */,
+				32A1B93A2086ECBD00F9FD09 /* MyoSettings.cpp in Sources */,
+				32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */,
+				32A1B9332086E55900F9FD09 /* MyoData.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		32A1B90C2086DB8800F9FD09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		32A1B90D2086DB8800F9FD09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		32A1B92D2086E44800F9FD09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				INFOPLIST_FILE = MyoCHOP/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = optexture.com.MyoCHOP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		32A1B92E2086E44800F9FD09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
+				INFOPLIST_FILE = MyoCHOP/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_BUNDLE_IDENTIFIER = optexture.com.MyoCHOP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		32A1B9052086DB8800F9FD09 /* Build configuration list for PBXProject "MyoCHOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32A1B90C2086DB8800F9FD09 /* Debug */,
+				32A1B90D2086DB8800F9FD09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32A1B92C2086E44800F9FD09 /* Build configuration list for PBXNativeTarget "MyoCHOP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32A1B92D2086E44800F9FD09 /* Debug */,
+				32A1B92E2086E44800F9FD09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 32A1B9022086DB8800F9FD09 /* Project object */;
+}
