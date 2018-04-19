@@ -6,6 +6,7 @@
 //
 
 #include "MyoData.h"
+#include <vector>
 
 MyoData::MyoData()
 : synced(false)
@@ -45,6 +46,10 @@ void MyoData::writeToChannels(CHOP_Output *output,
   writeChannel(output, offset, OutputChan::accelY, accel.y());
   writeChannel(output, offset, OutputChan::accelZ, accel.z());
 
+  writeChannel(output, offset, OutputChan::gyroX, gyro.x());
+  writeChannel(output, offset, OutputChan::gyroY, gyro.y());
+  writeChannel(output, offset, OutputChan::gyroZ, gyro.z());
+
   auto orientVec = quaternionToVector(orient);
 
   writeChannel(output, offset, OutputChan::orientX, orientVec.x());
@@ -71,4 +76,73 @@ void MyoData::writeToChannels(CHOP_Output *output,
   writeChannel(output, offset, OutputChan::emg5, emg[5]);
   writeChannel(output, offset, OutputChan::emg6, emg[6]);
   writeChannel(output, offset, OutputChan::emg7, emg[7]);
+}
+
+std::string makeChannelName(std::size_t deviceIndex,
+                            std::string suffix) {
+  return "myo" + std::to_string(deviceIndex) + "/" + suffix;
+}
+
+class DeviceChannelNames {
+public:
+  DeviceChannelNames(std::size_t i) {
+    setName(i, OutputChan::synced, "synced");
+    setName(i, OutputChan::arm, "arm");
+    setName(i, OutputChan::direction, "direction");
+    setName(i, OutputChan::locked, "locked");
+    setName(i, OutputChan::rssi, "rssi");
+
+    setName(i, OutputChan::accelX, "accelX");
+    setName(i, OutputChan::accelY, "accelY");
+    setName(i, OutputChan::accelZ, "accelZ");
+
+    setName(i, OutputChan::gyroX, "gyroX");
+    setName(i, OutputChan::gyroY, "gyroY");
+    setName(i, OutputChan::gyroZ, "gyroZ");
+
+    setName(i, OutputChan::orientX, "orientX");
+    setName(i, OutputChan::orientY, "orientY");
+    setName(i, OutputChan::orientZ, "orientZ");
+
+    setName(i, OutputChan::orientQuatX, "orientQuatX");
+    setName(i, OutputChan::orientQuatY, "orientQuatY");
+    setName(i, OutputChan::orientQuatZ, "orientQuatZ");
+    setName(i, OutputChan::orientQuatW, "orientQuatW");
+
+    setName(i, OutputChan::poseRest, "poseRest");
+    setName(i, OutputChan::poseFist, "poseFist");
+    setName(i, OutputChan::poseWaveIn, "poseWaveIn");
+    setName(i, OutputChan::poseWaveOut, "poseWaveOut");
+    setName(i, OutputChan::poseFingersSpread, "poseFingersSpread");
+    setName(i, OutputChan::poseDoubleTap, "poseDoubleTap");
+
+    setName(i, OutputChan::emg0, "emg0");
+    setName(i, OutputChan::emg1, "emg1");
+    setName(i, OutputChan::emg2, "emg2");
+    setName(i, OutputChan::emg3, "emg3");
+    setName(i, OutputChan::emg4, "emg4");
+    setName(i, OutputChan::emg5, "emg5");
+    setName(i, OutputChan::emg6, "emg6");
+    setName(i, OutputChan::emg7, "emg7");
+  }
+  const char* operator[](OutputChan chan) {
+    return names[static_cast<std::size_t>(chan)].c_str();
+  }
+
+private:
+  void setName(std::size_t deviceIndex, OutputChan chan, std::string suffix) {
+    names[static_cast<std::size_t>(chan)] = makeChannelName(deviceIndex, suffix);
+  }
+
+  std::array<std::string, static_cast<std::size_t>(OutputChan::numOutputs)> names;
+};
+
+static std::vector<DeviceChannelNames> deviceChannelNames;
+
+const char* MyoData::getChannelName(std::size_t deviceIndex,
+                                    OutputChan chan) {
+  if (deviceIndex >= deviceChannelNames.size()) {
+    deviceChannelNames.emplace_back(deviceIndex);
+  }
+  return deviceChannelNames[deviceIndex][chan];
 }

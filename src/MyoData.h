@@ -17,6 +17,9 @@ using PoseArray = std::array<bool, numPoses>;
 
 class MyoData {
 public:
+  static const char* getChannelName(std::size_t deviceIndex,
+                                    OutputChan chan);
+
   MyoData();
 
   void writeToChannels(CHOP_Output* output,
