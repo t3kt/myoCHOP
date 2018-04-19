@@ -60,7 +60,9 @@ bool MyoCHOP::getOutputInfo(CHOP_OutputInfo *info) {
 }
 
 const char* MyoCHOP::getChannelName(int32_t index, void *reserved) {
-  return "chan1";
+  auto deviceIndex = index / static_cast<std::size_t>(OutputChan::numOutputs);
+  auto chan = static_cast<OutputChan>(index % static_cast<std::size_t>(OutputChan::numOutputs));
+  return MyoData::getChannelName(deviceIndex, chan);
 }
 
 void MyoCHOP::execute(const CHOP_Output *output, OP_Inputs *inputs, void *reserved) {

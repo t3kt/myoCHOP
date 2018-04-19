@@ -10,10 +10,6 @@
 #include <cstddef>
 #include <myo/myo.hpp>
 
-using MyoId = int;
-
-const MyoId invalidMyoId = -1;
-
 using MyoPtr = myo::Myo*;
 
 const std::size_t emgLength = 8;

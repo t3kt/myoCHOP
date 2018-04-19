@@ -25,6 +25,14 @@ public:
   void writeToChannels(CHOP_Output* output,
                        std::size_t deviceIndex) const;
 
+  void setPose(myo::Pose pose) {
+    poses[static_cast<std::size_t>(pose.type())] = true;
+  }
+
+  void resetPoses() {
+    poses.fill(false);
+  }
+
   bool synced;
   myo::Arm arm;
   myo::XDirection direction;

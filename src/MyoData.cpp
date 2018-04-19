@@ -125,16 +125,19 @@ public:
     setName(i, OutputChan::emg6, "emg6");
     setName(i, OutputChan::emg7, "emg7");
   }
-  const char* operator[](OutputChan chan) {
-    return names[static_cast<std::size_t>(chan)].c_str();
+  const char* operator[](OutputChan chan) const {
+    return _names[static_cast<std::size_t>(chan)].c_str();
   }
 
 private:
-  void setName(std::size_t deviceIndex, OutputChan chan, std::string suffix) {
-    names[static_cast<std::size_t>(chan)] = makeChannelName(deviceIndex, suffix);
+  void setName(std::size_t deviceIndex,
+               OutputChan chan,
+               std::string suffix) {
+    _names[static_cast<std::size_t>(chan)]
+      = makeChannelName(deviceIndex, suffix);
   }
 
-  std::array<std::string, static_cast<std::size_t>(OutputChan::numOutputs)> names;
+  std::array<std::string, static_cast<std::size_t>(OutputChan::numOutputs)> _names;
 };
 
 static std::vector<DeviceChannelNames> deviceChannelNames;

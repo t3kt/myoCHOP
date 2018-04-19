@@ -7,8 +7,12 @@
 
 #pragma once
 
+#include <memory>
 #include "CHOP_CPlusPlusBase.h"
+#include "MyoData.h"
+#include "MyoManager.h"
 #include "MyoSettings.h"
+#include "MyoUpdater.h"
 
 class MyoCHOP : public CHOP_CPlusPlusBase {
 public:
@@ -36,5 +40,8 @@ public:
   virtual void    setupParameters(OP_ParameterManager* manager) override;
   virtual void    pulsePressed(const char* name) override;
 private:
-  MyoSettings settings;
+  MyoSettings _settings;
+  std::unique_ptr<myo::Hub> _hub;
+  MyoManager _manager;
+  std::unique_ptr<MyoUpdater> _updater;
 };

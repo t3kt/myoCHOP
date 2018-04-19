@@ -10,20 +10,32 @@
 #include <unordered_map>
 #include <vector>
 #include "Common.h"
+#include "MyoData.h"
+#include "MyoSettings.h"
 
-using MyoPtr = myo::Myo*;
+class MyoDeviceState {
+public:
+  MyoDeviceState(MyoPtr device) : _device(device) {}
+
+  MyoData data;
+
+  bool matches(MyoPtr device) const { return device == _device; }
+  void applySettings(const MyoSettings& settings);
+
+private:
+  MyoPtr _device;
+};
 
 class MyoManager {
 public:
-  MyoManager() : _nextId(0) {}
-
-  MyoId getMyoId(MyoPtr dev) const;
-  MyoId registerMyo(MyoPtr dev);
+  MyoDeviceState& registerMyo(MyoPtr dev);
   void unregisterMyo(MyoPtr dev);
 
-  std::size_t count() const { return _deviceIds.size(); }
+  MyoDeviceState& operator[](MyoPtr dev);
+
+  std::size_t count() const { return _devices.size(); }
+
+  std::vector<MyoDeviceState>& devices() { return _devices; }
 private:
-  std::vector<MyoId> _deviceIds;
-  std::unordered_map<MyoPtr, MyoId> _idsByPointer;
-  MyoId _nextId;
+  std::vector<MyoDeviceState> _devices;
 };

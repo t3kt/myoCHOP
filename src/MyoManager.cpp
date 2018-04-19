@@ -7,32 +7,32 @@
 
 #include "MyoManager.h"
 
-MyoId MyoManager::getMyoId(MyoPtr dev) const {
-  auto iter = _idsByPointer.find(dev);
-  if (iter == _idsByPointer.end()) {
-    return invalidMyoId;
-  }
-  return iter->second;
+void MyoDeviceState::applySettings(const MyoSettings &settings) {
+  _device->setStreamEmg(settings.outputEmg
+                        ? myo::Myo::streamEmgEnabled : myo::Myo::streamEmgDisabled);
 }
 
-MyoId MyoManager::registerMyo(MyoPtr dev) {
-  auto iter = _idsByPointer.find(dev);
-  if (iter != _idsByPointer.end()) {
-    return iter->second;
-  }
-  auto id = _nextId++;
-  _idsByPointer[dev] = id;
-  _deviceIds.push_back(id);
-  return id;
+MyoDeviceState& MyoManager::registerMyo(MyoPtr dev) {
+  _devices.emplace_back(dev);
+  return _devices.back();
 }
 
 void MyoManager::unregisterMyo(MyoPtr dev) {
-  auto mapIter = _idsByPointer.find(dev);
-  if (mapIter != _idsByPointer.end()) {
-    _idsByPointer.erase(mapIter);
-    auto listIter = std::find(_deviceIds.begin(), _deviceIds.end(), mapIter->second);
-    if (listIter != _deviceIds.end()) {
-      _deviceIds.erase(listIter);
+  for (auto iter = _devices.begin();
+       iter != _devices.end();
+       iter++) {
+    if (iter->matches(dev)) {
+      _devices.erase(iter);
+      return;
     }
   }
+}
+
+MyoDeviceState& MyoManager::operator[](MyoPtr dev) {
+  for (auto& state : _devices) {
+    if (state.matches(dev)) {
+      return state;
+    }
+  }
+  return registerMyo(dev);
 }
