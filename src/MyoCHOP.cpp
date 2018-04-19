@@ -6,6 +6,9 @@
 //
 
 #include "MyoCHOP.h"
+#include <string>
+
+static const std::string applicationId = "com.optexture.myochop";
 
 extern "C" {
   DLLEXPORT
@@ -37,8 +40,12 @@ extern "C" {
 
 }
 
-MyoCHOP::MyoCHOP(const OP_NodeInfo* info) {}
-MyoCHOP::~MyoCHOP() {}
+MyoCHOP::MyoCHOP(const OP_NodeInfo* info) {
+  _updater = std::make_unique<MyoUpdater>(_manager);
+}
+MyoCHOP::~MyoCHOP() {
+  deinitialize();
+}
 
 void MyoCHOP::getGeneralInfo(CHOP_GeneralInfo *info) {
   info->cookEveryFrameIfAsked = true;
@@ -50,7 +57,12 @@ void MyoCHOP::setupParameters(OP_ParameterManager *manager) {
 }
 
 bool MyoCHOP::getOutputInfo(CHOP_OutputInfo *info) {
-  info->numChannels = 1;
+  _settings.loadValuesFromParameters(info->opInputs);
+  if (_settings.active) {
+    info->numChannels = static_cast<int32_t>(_manager.count()) * static_cast<int32_t>(OutputChan::numOutputs);
+  } else {
+    info->numChannels = 0;
+  }
 
   // Since we are outputting a timeslice, the system will dictate
   // the numSamples and startIndex of the CHOP data
@@ -65,8 +77,45 @@ const char* MyoCHOP::getChannelName(int32_t index, void *reserved) {
   return MyoData::getChannelName(deviceIndex, chan);
 }
 
-void MyoCHOP::execute(const CHOP_Output *output, OP_Inputs *inputs, void *reserved) {
-  //TODO: WRITE THIS!
+void MyoCHOP::initialize() {
+  _hub = std::make_unique<myo::Hub>(applicationId);
+  _hub->addListener(_updater.get());
+}
+
+void MyoCHOP::deinitialize() {
+  if (_hub) {
+    if (_updater) {
+      _hub->removeListener(_updater.get());
+      _updater = nullptr;
+    }
+    _hub = nullptr;
+  }
+  _manager.clear();
+}
+
+void MyoCHOP::execute(const CHOP_Output *output,
+                      OP_Inputs *inputs, void *reserved) {
+  if (_settings.active) {
+    if (!_hub) {
+      initialize();
+    }
+  } else {
+    deinitialize();
+  }
+  if (!_hub) {
+    return;
+  }
+  _hub->setLockingPolicy(_settings.enableLocking ?
+                         myo::Hub::lockingPolicyStandard :
+                         myo::Hub::lockingPolicyNone);
+  _hub->run(_settings.interval);
+  for (std::size_t deviceIndex = 0;
+       deviceIndex < _manager.count();
+       deviceIndex++) {
+    auto& device = _manager.devices()[deviceIndex];
+    device.applySettings(_settings);
+    device.data.writeToChannels(output, deviceIndex);
+  }
 }
 
 int32_t MyoCHOP::getNumInfoCHOPChans() {

@@ -16,6 +16,8 @@ namespace Page {
 
 namespace ParName {
   const char active[] = "Active";
+  const char interval[] = "Interval";
+  const char enableLocking[] = "Enablelocking";
   const char outputArm[] = "Outputarm";
   const char outputAccel[] = "Outputaccel";
   const char outputGyro[] = "Outputgyro";

@@ -22,7 +22,7 @@ public:
 
   MyoData();
 
-  void writeToChannels(CHOP_Output* output,
+  void writeToChannels(const CHOP_Output* output,
                        std::size_t deviceIndex) const;
 
   void setPose(myo::Pose pose) {

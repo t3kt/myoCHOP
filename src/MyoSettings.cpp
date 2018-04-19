@@ -8,6 +8,8 @@
 #include "MyoSettings.h"
 #include <assert.h>
 
+static const uint32_t defaultInterval = 1000 / 60;
+
 static
 void addBoolParameter(OP_ParameterManager *manager,
                       const char *name,
@@ -23,6 +25,21 @@ void addBoolParameter(OP_ParameterManager *manager,
 void MyoSettings::setUpParameters(OP_ParameterManager *manager) {
   addBoolParameter(manager, ParName::active, Page::myo, true);
 
+  {
+    OP_NumericParameter param(ParName::interval);
+    param.page = Page::myo;
+    param.label = "Update Interval";
+    param.defaultValues[0] = defaultInterval;
+    param.minSliders[0] = param.minValues[0] = 0;
+    param.maxSliders[0] = param.maxValues[0] = 1000;
+    param.clampMins[0] = true;
+    param.clampMaxes[0] = true;
+    auto result = manager->appendInt(param);
+    assert(result == OP_ParAppendResult::Success);
+  }
+
+  addBoolParameter(manager, ParName::enableLocking, Page::myo, false);
+
   addBoolParameter(manager, ParName::outputArm, Page::outputs, true);
   addBoolParameter(manager, ParName::outputAccel, Page::outputs, true);
   addBoolParameter(manager, ParName::outputGyro, Page::outputs, true);
@@ -37,6 +54,7 @@ void MyoSettings::setUpParameters(OP_ParameterManager *manager) {
 
 MyoSettings::MyoSettings()
 : active(true)
+, enableLocking(false)
 , outputArm(true)
 , outputAccel(true)
 , outputGyro(true)
@@ -46,10 +64,13 @@ MyoSettings::MyoSettings()
 , outputEmg(false)
 , outputSync(true)
 , outputRssi(false)
-, outputDirection(false) { }
+, outputDirection(false)
+, interval(defaultInterval) { }
 
 void MyoSettings::loadValuesFromParameters(OP_Inputs *inputs) {
   active = static_cast<bool>(inputs->getParInt(ParName::active));
+  enableLocking = static_cast<bool>(inputs->getParInt(ParName::enableLocking));
+  interval = inputs->getParInt(ParName::interval);
 
   outputArm = static_cast<bool>(inputs->getParInt(ParName::outputArm));
   outputAccel = static_cast<bool>(inputs->getParInt(ParName::outputAccel));

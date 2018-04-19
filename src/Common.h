@@ -26,6 +26,9 @@ const std::size_t numPoses = libmyo_num_poses;
 namespace ParName {
 
   extern const char active[];
+  extern const char interval[];
+  extern const char enableLocking[];
+
   extern const char outputArm[];
   extern const char outputAccel[];
   extern const char outputGyro[];

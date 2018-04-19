@@ -16,7 +16,10 @@ MyoData::MyoData()
 , rssi(0) {}
 
 template<typename T>
-void writeChannel(CHOP_Output *output, std::size_t offset, OutputChan chan, T value) {
+void writeChannel(const CHOP_Output *output,
+                  std::size_t offset,
+                  OutputChan chan,
+                  T value) {
   auto i = offset + static_cast<std::size_t>(chan);
   if (i < output->numChannels) {
     output->channels[i][0] = static_cast<double>(value);
@@ -33,7 +36,7 @@ static myo::Vector3<float> quaternionToVector(const myo::Quaternion<float>& quat
   return myo::Vector3<float>(yaw, pitch, roll);
 }
 
-void MyoData::writeToChannels(CHOP_Output *output,
+void MyoData::writeToChannels(const CHOP_Output *output,
                               std::size_t deviceIndex) const {
   auto offset = deviceIndex * static_cast<std::size_t>(OutputChan::numOutputs);
   writeChannel(output, offset, OutputChan::synced, synced);

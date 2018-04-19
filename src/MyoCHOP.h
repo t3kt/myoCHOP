@@ -40,6 +40,9 @@ public:
   virtual void    setupParameters(OP_ParameterManager* manager) override;
   virtual void    pulsePressed(const char* name) override;
 private:
+  void initialize();
+  void deinitialize();
+
   MyoSettings _settings;
   std::unique_ptr<myo::Hub> _hub;
   MyoManager _manager;

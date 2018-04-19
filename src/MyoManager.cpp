@@ -10,6 +10,9 @@
 void MyoDeviceState::applySettings(const MyoSettings &settings) {
   _device->setStreamEmg(settings.outputEmg
                         ? myo::Myo::streamEmgEnabled : myo::Myo::streamEmgDisabled);
+  if (settings.outputRssi) {
+    _device->requestRssi();
+  }
 }
 
 MyoDeviceState& MyoManager::registerMyo(MyoPtr dev) {

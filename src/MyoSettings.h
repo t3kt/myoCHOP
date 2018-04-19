@@ -19,6 +19,8 @@ public:
   MyoSettings();
 
   bool active;
+  uint32_t interval;
+  bool enableLocking;
 
   bool outputArm;
   bool outputAccel;
@@ -30,4 +32,5 @@ public:
   bool outputSync;
   bool outputRssi;
   bool outputDirection;
+  
 };

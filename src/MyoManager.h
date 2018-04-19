@@ -36,6 +36,8 @@ public:
   std::size_t count() const { return _devices.size(); }
 
   std::vector<MyoDeviceState>& devices() { return _devices; }
+
+  void clear() { _devices.clear(); }
 private:
   std::vector<MyoDeviceState> _devices;
 };
