@@ -7,7 +7,9 @@
 
 #pragma once
 
+#include <array>
 #include <cstddef>
+#include <iostream>
 #include <myo/myo.hpp>
 
 using MyoPtr = myo::Myo*;
@@ -23,11 +25,15 @@ namespace Page {
 
 const std::size_t numPoses = libmyo_num_poses;
 
+using EmgArray = std::array<int8_t, emgLength>;
+using PoseArray = std::array<bool, numPoses>;
+
 namespace ParName {
 
   extern const char active[];
   extern const char interval[];
   extern const char enableLocking[];
+  extern const char enableLogging[];
 
   extern const char outputArm[];
   extern const char outputAccel[];
@@ -59,3 +65,36 @@ enum class OutputChan : std::size_t {
 
   numOutputs,
 };
+
+std::ostream&
+operator<<(std::ostream& os,
+           const myo::FirmwareVersion& value);
+
+std::ostream&
+operator<<(std::ostream& os,
+           const myo::Arm& value);
+
+std::ostream&
+operator<<(std::ostream& os,
+           const myo::XDirection& value);
+
+template<typename T>
+std::ostream&
+operator<<(std::ostream& os,
+           const myo::Vector3<T>& value) {
+  return os << "(" << value.x() << ", "
+  << value.y() << ", " << value.z() << ")";
+}
+
+template<typename T>
+std::ostream&
+operator<<(std::ostream& os,
+           const myo::Quaternion<T>& value) {
+  return os << "(" << value.x() << ", "
+  << value.y() << ", " << value.z()
+  << value.w() << ")";
+}
+
+std::ostream&
+operator<<(std::ostream& os,
+           const EmgArray& value);

@@ -7,13 +7,17 @@
 
 #pragma once
 
+#include <iostream>
 #include "Common.h"
 #include "MyoData.h"
 #include "MyoManager.h"
 
 class MyoUpdater : public myo::DeviceListener {
 public:
-  MyoUpdater(MyoManager& manager) : _manager(manager) {}
+  MyoUpdater(MyoManager& manager,
+             const MyoSettings& settings)
+  : _manager(manager)
+  , _settings(settings) {}
   virtual ~MyoUpdater() {}
 
   /// Called when a Myo has been paired.
@@ -112,5 +116,11 @@ public:
   void onEmgData(MyoPtr dev, uint64_t timestamp, const int8_t* emg) override;
 
 private:
+  inline bool logging() const { return _settings.enableLogging; }
+  std::ostream& logOut() const {
+    return std::cout << "[MyoCHOP] ";
+  }
+
   MyoManager& _manager;
+  const MyoSettings & _settings;
 };

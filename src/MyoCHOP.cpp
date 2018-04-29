@@ -41,7 +41,7 @@ extern "C" {
 }
 
 MyoCHOP::MyoCHOP(const OP_NodeInfo* info) {
-  _updater = std::make_unique<MyoUpdater>(_manager);
+  _updater = std::make_unique<MyoUpdater>(_manager, _settings);
 }
 MyoCHOP::~MyoCHOP() {
   deinitialize();
@@ -57,7 +57,7 @@ void MyoCHOP::setupParameters(OP_ParameterManager *manager) {
 }
 
 bool MyoCHOP::getOutputInfo(CHOP_OutputInfo *info) {
-  _settings.loadValuesFromParameters(info->opInputs);
+  _settings = MyoSettings(info->opInputs);
   if (_settings.active) {
     info->numChannels = static_cast<int32_t>(_manager.count()) * static_cast<int32_t>(OutputChan::numOutputs);
   } else {

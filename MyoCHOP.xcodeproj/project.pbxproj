@@ -14,6 +14,7 @@
 		32A1B93A2086ECBD00F9FD09 /* MyoSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9382086ECBD00F9FD09 /* MyoSettings.cpp */; };
 		32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93B208726CB00F9FD09 /* Common.cpp */; };
 		32A1B93F2088525E00F9FD09 /* MyoUpdater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93D2088525E00F9FD09 /* MyoUpdater.cpp */; };
+		32DA623220962B780074C059 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DA623120962B780074C059 /* myo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		32A1B93B208726CB00F9FD09 /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
 		32A1B93D2088525E00F9FD09 /* MyoUpdater.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoUpdater.cpp; sourceTree = "<group>"; };
 		32A1B93E2088525E00F9FD09 /* MyoUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoUpdater.h; sourceTree = "<group>"; };
+		32DA623020962B780074C059 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
+		32DA623120962B780074C059 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myo.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DA623220962B780074C059 /* myo.framework in Frameworks */,
 				32A1B9302086E45E00F9FD09 /* myo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +57,7 @@
 		32A1B9012086DB8800F9FD09 = {
 			isa = PBXGroup;
 			children = (
+				32DA622F20962B780074C059 /* libs */,
 				32A1B9202086DFA300F9FD09 /* src */,
 				32A1B9152086DF8900F9FD09 /* td */,
 				32A1B92A2086E44800F9FD09 /* MyoCHOP */,
@@ -113,6 +118,15 @@
 				32A1B92B2086E44800F9FD09 /* Info.plist */,
 			);
 			path = MyoCHOP;
+			sourceTree = "<group>";
+		};
+		32DA622F20962B780074C059 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				32DA623020962B780074C059 /* picojson.h */,
+				32DA623120962B780074C059 /* myo.framework */,
+			);
+			path = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

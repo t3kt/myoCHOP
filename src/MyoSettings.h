@@ -14,13 +14,13 @@ class MyoSettings {
 public:
   static void setUpParameters(OP_ParameterManager* manager);
 
-  void loadValuesFromParameters(OP_Inputs* inputs);
-
   MyoSettings();
+  explicit MyoSettings(OP_Inputs* inputs);
 
   bool active;
   uint32_t interval;
   bool enableLocking;
+  bool enableLogging;
 
   bool outputArm;
   bool outputAccel;
@@ -34,3 +34,6 @@ public:
   bool outputDirection;
   
 };
+
+bool operator==(const MyoSettings& lhs, const MyoSettings& rhs);
+inline bool operator!=(const MyoSettings& lhs, const MyoSettings& rhs){ return !(lhs == rhs); }

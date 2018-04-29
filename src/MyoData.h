@@ -7,13 +7,9 @@
 
 #pragma once
 
-#include <array>
 #include <myo/myo.hpp>
 #include "CHOP_CPlusPlusBase.h"
 #include "Common.h"
-
-using EmgArray = std::array<int8_t, emgLength>;
-using PoseArray = std::array<bool, numPoses>;
 
 class MyoData {
 public:
