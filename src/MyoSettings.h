@@ -1,5 +1,5 @@
 //
-//  MyoSettings.hpp
+//  MyoSettings.h
 //  MyoCHOP
 //
 //  Created by tekt on 4/17/18.

@@ -41,7 +41,8 @@ extern "C" {
 }
 
 MyoCHOP::MyoCHOP(const OP_NodeInfo* info) {
-  _updater = std::make_unique<MyoUpdater>(_manager, _settings);
+  _debug = std::make_unique<MyoDebug>(_settings);
+  _updater = std::make_unique<MyoUpdater>(_manager, _settings, *_debug);
 }
 MyoCHOP::~MyoCHOP() {
   deinitialize();

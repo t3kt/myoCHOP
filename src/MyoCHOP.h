@@ -1,5 +1,5 @@
 //
-//  MyoCHOP.hpp
+//  MyoCHOP.h
 //  MyoCHOP
 //
 //  Created by tekt on 4/17/18.
@@ -10,6 +10,7 @@
 #include <memory>
 #include "CHOP_CPlusPlusBase.h"
 #include "MyoData.h"
+#include "MyoDebug.h"
 #include "MyoManager.h"
 #include "MyoSettings.h"
 #include "MyoUpdater.h"
@@ -44,6 +45,7 @@ private:
   void deinitialize();
 
   MyoSettings _settings;
+  std::unique_ptr<MyoDebug> _debug;
   std::unique_ptr<myo::Hub> _hub;
   MyoManager _manager;
   std::unique_ptr<MyoUpdater> _updater;

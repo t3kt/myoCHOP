@@ -15,6 +15,7 @@
 		32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93B208726CB00F9FD09 /* Common.cpp */; };
 		32A1B93F2088525E00F9FD09 /* MyoUpdater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93D2088525E00F9FD09 /* MyoUpdater.cpp */; };
 		32DA623220962B780074C059 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DA623120962B780074C059 /* myo.framework */; };
+		32DA6236209641EC0074C059 /* MyoDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6234209641EC0074C059 /* MyoDebug.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,9 @@
 		32A1B93E2088525E00F9FD09 /* MyoUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoUpdater.h; sourceTree = "<group>"; };
 		32DA623020962B780074C059 /* picojson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picojson.h; sourceTree = "<group>"; };
 		32DA623120962B780074C059 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myo.framework; sourceTree = "<group>"; };
+		32DA6233209641C30074C059 /* NullOStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NullOStream.h; sourceTree = "<group>"; };
+		32DA6234209641EC0074C059 /* MyoDebug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoDebug.cpp; sourceTree = "<group>"; };
+		32DA6235209641EC0074C059 /* MyoDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoDebug.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				32A1B9392086ECBD00F9FD09 /* MyoSettings.h */,
 				32A1B93D2088525E00F9FD09 /* MyoUpdater.cpp */,
 				32A1B93E2088525E00F9FD09 /* MyoUpdater.h */,
+				32DA6234209641EC0074C059 /* MyoDebug.cpp */,
+				32DA6235209641EC0074C059 /* MyoDebug.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			children = (
 				32DA623020962B780074C059 /* picojson.h */,
 				32DA623120962B780074C059 /* myo.framework */,
+				32DA6233209641C30074C059 /* NullOStream.h */,
 			);
 			path = libs;
 			sourceTree = "<group>";
@@ -200,6 +207,7 @@
 				32A1B9362086E72300F9FD09 /* MyoManager.cpp in Sources */,
 				32A1B93A2086ECBD00F9FD09 /* MyoSettings.cpp in Sources */,
 				32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */,
+				32DA6236209641EC0074C059 /* MyoDebug.cpp in Sources */,
 				32A1B9332086E55900F9FD09 /* MyoData.cpp in Sources */,
 				32A1B93F2088525E00F9FD09 /* MyoUpdater.cpp in Sources */,
 			);

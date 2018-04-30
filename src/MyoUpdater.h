@@ -1,5 +1,5 @@
 //
-//  MyoUpdater.hpp
+//  MyoUpdater.h
 //  MyoCHOP
 //
 //  Created by tekt on 4/18/18.
@@ -10,14 +10,17 @@
 #include <iostream>
 #include "Common.h"
 #include "MyoData.h"
+#include "MyoDebug.h"
 #include "MyoManager.h"
 
 class MyoUpdater : public myo::DeviceListener {
 public:
   MyoUpdater(MyoManager& manager,
-             const MyoSettings& settings)
+             const MyoSettings& settings,
+             MyoDebug& debug)
   : _manager(manager)
-  , _settings(settings) {}
+  , _settings(settings)
+  , _debug(debug) {}
   virtual ~MyoUpdater() {}
 
   /// Called when a Myo has been paired.
@@ -123,4 +126,5 @@ private:
 
   MyoManager& _manager;
   const MyoSettings & _settings;
+  MyoDebug& _debug;
 };
