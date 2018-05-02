@@ -23,6 +23,7 @@ extern "C" {
   CHOP_CPlusPlusBase*
   CreateCHOPInstance(const OP_NodeInfo* info)
   {
+    std::cout << "Initializing MyoCHOP" << std::endl;
     // Return a new instance of your class every time this is called.
     // It will be called once per CHOP that is using the .dll
     return new MyoCHOP(info);
@@ -32,6 +33,7 @@ extern "C" {
   void
   DestroyCHOPInstance(CHOP_CPlusPlusBase* instance)
   {
+    std::cout << "Destroying MyoCHOP" << std::endl;
     // Delete the instance here, this will be called when
     // Touch is shutting down, when the CHOP using that instance is deleted, or
     // if the CHOP loads a different DLL

@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32A1B92F2086E45000F9FD09 /* MyoCHOP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9212086DFC600F9FD09 /* MyoCHOP.cpp */; };
-		32A1B9302086E45E00F9FD09 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32A1B9132086DEC100F9FD09 /* myo.framework */; };
-		32A1B9332086E55900F9FD09 /* MyoData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9322086E55900F9FD09 /* MyoData.cpp */; };
-		32A1B9362086E72300F9FD09 /* MyoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9342086E72300F9FD09 /* MyoManager.cpp */; };
-		32A1B93A2086ECBD00F9FD09 /* MyoSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9382086ECBD00F9FD09 /* MyoSettings.cpp */; };
-		32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93B208726CB00F9FD09 /* Common.cpp */; };
-		32A1B93F2088525E00F9FD09 /* MyoUpdater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93D2088525E00F9FD09 /* MyoUpdater.cpp */; };
-		32DA623220962B780074C059 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DA623120962B780074C059 /* myo.framework */; };
-		32DA6236209641EC0074C059 /* MyoDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6234209641EC0074C059 /* MyoDebug.cpp */; };
+		32DA623A209960580074C059 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DA623120962B780074C059 /* myo.framework */; };
+		32DA623B209960910074C059 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93B208726CB00F9FD09 /* Common.cpp */; };
+		32DA623C209960910074C059 /* MyoCHOP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9212086DFC600F9FD09 /* MyoCHOP.cpp */; };
+		32DA623D209960910074C059 /* MyoData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9322086E55900F9FD09 /* MyoData.cpp */; };
+		32DA623E209960910074C059 /* MyoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9342086E72300F9FD09 /* MyoManager.cpp */; };
+		32DA623F209960910074C059 /* MyoSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B9382086ECBD00F9FD09 /* MyoSettings.cpp */; };
+		32DA6240209960910074C059 /* MyoUpdater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A1B93D2088525E00F9FD09 /* MyoUpdater.cpp */; };
+		32DA6241209960910074C059 /* MyoDebug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6234209641EC0074C059 /* MyoDebug.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +25,7 @@
 		32A1B91A2086DF8900F9FD09 /* CPlusPlusCHOPExample.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPlusPlusCHOPExample.cpp; sourceTree = "<group>"; };
 		32A1B9212086DFC600F9FD09 /* MyoCHOP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoCHOP.cpp; sourceTree = "<group>"; };
 		32A1B9222086DFC600F9FD09 /* MyoCHOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoCHOP.h; sourceTree = "<group>"; };
-		32A1B9292086E44800F9FD09 /* MyoCHOP.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoCHOP.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A1B9292086E44800F9FD09 /* MyoCHOP.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyoCHOP.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A1B92B2086E44800F9FD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32A1B9312086E4FC00F9FD09 /* MyoData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyoData.h; sourceTree = "<group>"; };
 		32A1B9322086E55900F9FD09 /* MyoData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyoData.cpp; sourceTree = "<group>"; };
@@ -50,8 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DA623220962B780074C059 /* myo.framework in Frameworks */,
-				32A1B9302086E45E00F9FD09 /* myo.framework in Frameworks */,
+				32DA623A209960580074C059 /* myo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +71,7 @@
 		32A1B90B2086DB8800F9FD09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32A1B9292086E44800F9FD09 /* MyoCHOP.bundle */,
+				32A1B9292086E44800F9FD09 /* MyoCHOP.plugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,7 +151,7 @@
 			);
 			name = MyoCHOP;
 			productName = MyoCHOP;
-			productReference = 32A1B9292086E44800F9FD09 /* MyoCHOP.bundle */;
+			productReference = 32A1B9292086E44800F9FD09 /* MyoCHOP.plugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -203,13 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32A1B92F2086E45000F9FD09 /* MyoCHOP.cpp in Sources */,
-				32A1B9362086E72300F9FD09 /* MyoManager.cpp in Sources */,
-				32A1B93A2086ECBD00F9FD09 /* MyoSettings.cpp in Sources */,
-				32A1B93C208726CB00F9FD09 /* Common.cpp in Sources */,
-				32DA6236209641EC0074C059 /* MyoDebug.cpp in Sources */,
-				32A1B9332086E55900F9FD09 /* MyoData.cpp in Sources */,
-				32A1B93F2088525E00F9FD09 /* MyoUpdater.cpp in Sources */,
+				32DA623B209960910074C059 /* Common.cpp in Sources */,
+				32DA6240209960910074C059 /* MyoUpdater.cpp in Sources */,
+				32DA623D209960910074C059 /* MyoData.cpp in Sources */,
+				32DA623F209960910074C059 /* MyoSettings.cpp in Sources */,
+				32DA6241209960910074C059 /* MyoDebug.cpp in Sources */,
+				32DA623C209960910074C059 /* MyoCHOP.cpp in Sources */,
+				32DA623E209960910074C059 /* MyoManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +320,6 @@
 		32A1B92D2086E44800F9FD09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,14 +330,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = optexture.com.MyoCHOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		32A1B92E2086E44800F9FD09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -351,7 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = optexture.com.MyoCHOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = plugin;
 			};
 			name = Release;
 		};
