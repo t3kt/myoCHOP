@@ -9,3 +9,6 @@ source/inspector.html
 MyoCHOP\.xcodeproj/project\.xcworkspace/xcuserdata/tekt\.xcuserdatad/
 
 CrashAutoSave\.toe
+.vs
+*.vcxproj.*
+*.dmp

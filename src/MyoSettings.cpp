@@ -42,7 +42,7 @@ void MyoSettings::setUpParameters(OP_ParameterManager *manager) {
 
   addBoolParameter(manager, ParName::enableLocking, Page::myo, false,
                    "Enable Locking");
-  addBoolParameter(manager, ParName::enableLogging, Page::myo, false,
+  addBoolParameter(manager, ParName::enableLogging, Page::myo, true,
                    "Enable Logging");
 
   addBoolParameter(manager, ParName::outputArm, Page::outputs, true,

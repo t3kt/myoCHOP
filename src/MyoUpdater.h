@@ -50,12 +50,17 @@ public:
   void onDisconnect(MyoPtr dev, uint64_t timestamp) override;
 
   /// Called when a paired Myo recognizes that it is on an arm.
-  /// @param dev The Myo for this event.
-  /// @param timestamp The timestamp of the event. Timestamps are 64 bit unsigned integers that correspond to a number
-  /// of microseconds since some (unspecified) period in time. Timestamps are monotonically non-decreasing.
+  /// @param myo The Myo for this event.
+  /// @param timestamp The timestamp of when the event is received by the SDK. Timestamps are 64 bit unsigned
+  /// integers that correspond to a number of microseconds since some (unspecified) period in time. Timestamps
+  /// are monotonically non-decreasing.
   /// @param arm The identified Arm of \a myo.
   /// @param xDirection The identified XDirection of \a myo.
-  void onArmSync(MyoPtr dev, uint64_t timestamp, myo::Arm arm, myo::XDirection xDirection) override;
+  /// @param rotation The estimated rotation of Myo on the user's arm after a sync.
+  /// @param warmupState The warmup state of \a myo. If \a warmupState is equal to WarmupState::warmupStateCold,
+  /// onWarmupCompleted() will be called when the warmup period has completed.
+  void onArmSync(MyoPtr myo, uint64_t timestamp, myo::Arm arm, myo::XDirection xDirection, float rotation,
+	  myo::WarmupState warmupState) override;
 
   /// Called when a paired Myo is moved or removed from the arm.
   /// @param dev The Myo for this event.

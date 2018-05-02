@@ -27,7 +27,7 @@ void MyoUpdater::onDisconnect(MyoPtr dev, uint64_t timestamp) {
   _debug.log("onDisconnect") << "t: " << timestamp << std::endl;
 }
 
-void MyoUpdater::onArmSync(MyoPtr dev, uint64_t timestamp, myo::Arm arm, myo::XDirection xDirection) {
+void MyoUpdater::onArmSync(MyoPtr dev, uint64_t timestamp, myo::Arm arm, myo::XDirection xDirection, float rotation, myo::WarmupState warmupState) {
   if (!_settings.outputArm && !_settings.outputDirection) {
     return;
   }

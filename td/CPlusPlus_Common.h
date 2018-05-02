@@ -32,7 +32,8 @@ stays the same, otherwise changes won't be backwards compatible
 
 #define NOMINMAX
 
-#ifdef WIN32
+// NOTE: I HAD TO CHANGE THIS FROM WIN32 TO _WINDOWS!
+#ifdef _WINDOWS
 #include <windows.h>
 #include <stdint.h>
 #include "GL_Extensions.h"
