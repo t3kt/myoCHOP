@@ -59,10 +59,10 @@
 		32A1B9012086DB8800F9FD09 = {
 			isa = PBXGroup;
 			children = (
+				32A1B92B2086E44800F9FD09 /* Info.plist */,
 				32DA622F20962B780074C059 /* libs */,
 				32A1B9202086DFA300F9FD09 /* src */,
 				32A1B9152086DF8900F9FD09 /* td */,
-				32A1B92A2086E44800F9FD09 /* MyoCHOP */,
 				32A1B90B2086DB8800F9FD09 /* Products */,
 				32A1B9122086DEC000F9FD09 /* Frameworks */,
 			);
@@ -114,14 +114,6 @@
 				32DA6235209641EC0074C059 /* MyoDebug.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		32A1B92A2086E44800F9FD09 /* MyoCHOP */ = {
-			isa = PBXGroup;
-			children = (
-				32A1B92B2086E44800F9FD09 /* Info.plist */,
-			);
-			path = MyoCHOP;
 			sourceTree = "<group>";
 		};
 		32DA622F20962B780074C059 /* libs */ = {
@@ -325,7 +317,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",
 				);
-				INFOPLIST_FILE = MyoCHOP/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = optexture.com.MyoCHOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -342,7 +334,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs",
 				);
-				INFOPLIST_FILE = MyoCHOP/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				PRODUCT_BUNDLE_IDENTIFIER = optexture.com.MyoCHOP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
